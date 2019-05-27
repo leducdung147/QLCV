@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Thành viên"
+              android:textColor="@color/colorBlue"
+              android:textSize="16dp"
+              android:layout_marginLeft="20pt"
+              android:layout_marginTop="5pt"
+              android:id="@+id/manager"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="8pt">
+        <ImageView android:layout_width="25dp"
+                   android:layout_height="match_parent"
+
+                   android:layout_margin="5pt"
+
+                   android:src="@drawable/download"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Thông tin cá nhân"
+                      android:textColor="#000"
+                      android:textSize="15dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Họ và tên: Lê Đức Dũng"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="MSSV: 17211TT3619"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="8pt">
+        <ImageView android:layout_width="25dp"
+                   android:layout_height="match_parent"
+
+                   android:layout_margin="5pt"
+
+                   android:src="@drawable/laptop"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Công việc"
+                      android:textColor="#000"
+                      android:textSize="15dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"
+            />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginTop="5pt"
+          android:background="@color/colorHint">
+
+    </View>
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Thành viên"
+              android:textColor="@color/colorBlue"
+              android:textSize="16dp"
+              android:layout_marginLeft="20pt"
+              android:layout_marginTop="5pt"
+              android:id="@+id/manager2"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="8pt">
+        <ImageView android:layout_width="25dp"
+                   android:layout_height="match_parent"
+
+                   android:layout_margin="5pt"
+
+                   android:src="@drawable/download"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Thông tin cá nhân"
+                      android:textColor="#000"
+                      android:textSize="15dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="8pt">
+        <ImageView android:layout_width="25dp"
+                   android:layout_height="match_parent"
+
+                   android:layout_margin="5pt"
+
+                   android:src="@drawable/laptop"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Công việc"
+                      android:textColor="#000"
+                      android:textSize="15dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginTop="5pt"
+          android:background="@color/colorHint">
+
+    </View>
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Thành viên"
+              android:textColor="@color/colorBlue"
+              android:textSize="16dp"
+              android:layout_marginLeft="20pt"
+              android:layout_marginTop="5pt"
+              android:id="@+id/manager3"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="8pt">
+        <ImageView android:layout_width="25dp"
+                   android:layout_height="match_parent"
+
+                   android:layout_margin="5pt"
+
+                   android:src="@drawable/download"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Thông tin cá nhân"
+                      android:textColor="#000"
+                      android:textSize="15dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="8pt">
+        <ImageView android:layout_width="25dp"
+                   android:layout_height="match_parent"
+
+                   android:layout_margin="5pt"
+
+                   android:src="@drawable/laptop"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Công việc"
+                      android:textColor="#000"
+                      android:textSize="15dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:layout_marginTop="5pt"
+          android:background="@color/colorHint">
+
+    </View>
+    <TextView android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="Thành viên"
+              android:textColor="@color/colorBlue"
+              android:textSize="16dp"
+              android:layout_marginLeft="20pt"
+              android:layout_marginTop="5pt"
+              android:id="@+id/manager4"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="8pt">
+        <ImageView android:layout_width="25dp"
+                   android:layout_height="match_parent"
+
+                   android:layout_margin="5pt"
+
+                   android:src="@drawable/download"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Thông tin cá nhân"
+                      android:textColor="#000"
+                      android:textSize="15dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="horizontal"
+                  android:layout_marginTop="8pt">
+        <ImageView android:layout_width="25dp"
+                   android:layout_height="match_parent"
+
+                   android:layout_margin="5pt"
+
+                   android:src="@drawable/laptop"/>
+        <LinearLayout android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="Công việc"
+                      android:textColor="#000"
+                      android:textSize="15dp"/>
+
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+            <TextView android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="hehe"
+                      android:textColor="@color/colorHint"
+                      android:textSize="13dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+        </LinearLayout>
+</ScrollView>

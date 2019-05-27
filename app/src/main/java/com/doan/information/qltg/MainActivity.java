@@ -3,30 +3,25 @@ package com.doan.information.qltg;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.TimePicker;
-import android.widget.Toast;
+import android.support.v4.view.GravityCompat;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.view.MenuItem;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
 
-
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.widget.*;
 import com.allyants.notifyme.NotifyMe;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
+import com.google.firebase.database.*;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -34,10 +29,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    TextView txtDate, txtTime;
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
+    TextView txtDate, txtTime, user, userEmail;
     EditText editCv, editNd;
-    Button btnDate, btnTime, btnAdd;
+    Button btnDate, btnTime, btnAdd, btnSua;
     //Khai báo Datasource lưu trữ danh sách công việc
     ArrayList<JobInWeek> arrJob = new ArrayList<JobInWeek>();
     //Khai báo ArrayAdapter cho ListView
@@ -48,18 +44,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Date hourFinish;
     private FirebaseAuth firebaseAuth;
 
-    private TextView txtLogout;
+     TextView txtLogout;
 
     private TextView textViewEmail;
     DatabaseReference databaseEvent;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main2);
         getFormWidgets();
         getDefaultInfor();
         addEvent();
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        FloatingActionButton fab = findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendMail();
+            }
+        });
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
+        navigationView.setNavigationItemSelectedListener(this);
         firebaseAuth = FirebaseAuth.getInstance();
         if (firebaseAuth.getCurrentUser() == null) {
             Intent i = new Intent(getApplicationContext(), LoginLayer.class);
@@ -79,13 +92,84 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         textViewEmail.setText("Hi! " + user.getEmail());
 
-        txtLogout = (TextView) findViewById(R.id.txtlogout);
 
-        txtLogout.setOnClickListener(this);
 
+
+        btnSua.setEnabled(false);
     }
 
-    //Đọc dữ liệu database
+    private void sendMail() {
+        String email = "leducdung147@gmail.com";
+        String[] convert = email.split(",");
+        String content = "Mọi góp ý gửi về leducdung147@gmail.com";
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL, convert);
+        intent.putExtra(Intent.EXTRA_SUBJECT, email);
+        intent.putExtra(Intent.EXTRA_TEXT, content);
+        intent.setType("text/plain");
+        startActivity(Intent.createChooser(intent, "Choose an email client"));
+    }
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main2, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+        Intent intent = new Intent(MainActivity.this, Infomation.class);
+        startActivity(intent);
+        if (id == R.id.nav_home) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+         intent = new Intent(MainActivity.this, Infomation.class);
+          startActivity(intent);
+        } else if (id == R.id.nav_slideshow) {
+            intent = new Intent(MainActivity.this, Infomation.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_tools) {
+            intent = new Intent(MainActivity.this, Infomation.class);
+            startActivity(intent);
+        } else if (id == R.id.nav_share) {
+            sendMail();
+        } else if (id == R.id.nav_send) {
+            sendMail();
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
     @Override
     protected void onStart() {
         super.onStart();
@@ -120,7 +204,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDate = (Button) findViewById(R.id.btndate);
         btnTime = (Button) findViewById(R.id.btntime);
         btnAdd = (Button) findViewById(R.id.btncongviec);
+        btnSua = (Button) findViewById(R.id.btnsua);
         lvCv = (ListView) findViewById(R.id.lvcongviec);
+        txtLogout = (TextView) findViewById(R.id.txtlogout);
+        user = (TextView) findViewById(R.id.user);
+        userEmail = (TextView) findViewById(R.id.userEmail);
         //Gán DataSource vào ArrayAdapter
         adapter = new ArrayAdapter<JobInWeek>
                 (this,
@@ -187,6 +275,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lvCv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                btnSua.setEnabled(true);
                 final int position = i;
                 Toast.makeText(MainActivity.this,
                         arrJob.get(i).getDescription(),
@@ -196,21 +286,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 editNd.setText(job.getDescription());
                 txtTime.setText(job.getHourFormat(job.getHourFinish()));
                 txtDate.setText(job.getDateFormat(job.getDateFinish()));
-                btnAdd.setOnClickListener(new View.OnClickListener() {
+                btnSua.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         //lỗi ko lấy được position khi click chọn item chỉnh sửa rồi remove nó đi
-                        if (!lvCv.isLongClickable()){
+
                         JobInWeek job = arrJob.get(position);
-                        updateJob(job.getIdKey(), position);}
-                        else{
-                            processAddJob();
-                        }
+                        updateJob(job.getIdKey(), position);
+                        btnSua.setEnabled(false);
+
+
+
                     }
+
                 });
 
-
             }
+
         });
         lvCv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -222,11 +314,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 arrJob.remove(i);
 
                 lvCv.setAdapter(adapter);
-
+                btnSua.setEnabled(false);
                 return false;
             }
         });
+        txtLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                    if (v == txtLogout) {
+                        firebaseAuth.signOut();
+                        finish();
+                        Intent i = new Intent(getApplicationContext(), LoginLayer.class);
+                        startActivity(i);
+                        Toast.makeText(getApplicationContext(), "Logout is Successfully", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+        });
     }
 
 
@@ -345,16 +450,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    @Override
-    public void onClick(View view) {
-        if (view == txtLogout) {
-            firebaseAuth.signOut();
-            finish();
-            Intent i = new Intent(getApplicationContext(), LoginLayer.class);
-            startActivity(i);
-            Toast.makeText(this, "Logout is Successfully", Toast.LENGTH_SHORT).show();
-        }
-    }
+
 
     private boolean deleteEvent(String id, String idKey) {
 
@@ -377,7 +473,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         job = new JobInWeek(cv, nd, dateFinish, hourFinish, job.getIdKey());
         arrJob.set(position, job);
-
+        dR.setValue(job);
         lvCv.setAdapter(adapter);
 
         //updating job
@@ -405,13 +501,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .large_icon(R.drawable.ic_launcher_foreground)
                 .build();
 
-        dR.setValue(job);
-       onStart();
 
-        editCv.requestFocus();
         Toast.makeText(getApplicationContext(), "Updated", Toast.LENGTH_LONG).show();
 
         return true;
     }
 }
-
