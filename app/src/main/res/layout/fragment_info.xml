@@ -70,12 +70,12 @@
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Màn hình đăng ký"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Màn hình đăng nhập"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"
             />
@@ -118,12 +118,12 @@
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Trần Xuân Tiến"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="17211TT3421"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
 
@@ -150,12 +150,12 @@
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Quản lý công việc"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Lên ý tưởng"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
 
@@ -196,12 +196,12 @@
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Ngô Văn Tình"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="17211TT1311"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
 
@@ -228,12 +228,12 @@
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Quản lý công việc"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Báo Cáo"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
 
@@ -274,12 +274,12 @@
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Đặng Ngọc Hiển"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="17211TT4347"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
 
@@ -306,12 +306,12 @@
 
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Lên ý tưởng"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
-                      android:text="hehe"
+                      android:text="Quản lý công việc"
                       android:textColor="@color/colorHint"
                       android:textSize="13dp"/>
 
